@@ -1,0 +1,33 @@
+{
+  "title": "Felice La Rizza -  Training & Consult ",
+  "some_events": [
+    { "title": "Automotive Technology Summit", "date": "2023-06-15" },
+    { "title": "Car Design Workshop", "date": "07-07-2023" },
+    { "title": "Automotive Engineering Conference", "date": "2023-08-10" }
+  ],
+  "description": "Welcome to my very first training website still under construction! ",
+  "name": "Felice La Rizza",
+  "description2": "I'm a motivated Technical Trainer with 10 years of experience.",
+  "email": "larizza.felice@gmail.com",
+
+  "pictures": [
+    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://plus.unsplash.com/premium_photo-1661964066289-2ca80fbf77e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://plus.unsplash.com/premium_photo-1676651178916-a092c108d11e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+  ],
+  "some_questions": [
+    {
+      "q1": "How satisfied are you with the overall quality of this course?",
+      "q2": "Would you recommend this training course to others in your organization or field?",
+      "q3": "How satisfied are you with the content covered in the training course on a scale 1-10?",
+      "q4": "How helpful were the training activities and discussions in reinforcing your understanding?"
+    }
+  ],
+  "picUrlEvents": [
+    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://plus.unsplash.com/premium_photo-1661964066289-2ca80fbf77e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://plus.unsplash.com/premium_photo-1676651178916-a092c108d11e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+  ]
+}
