@@ -8,18 +8,20 @@ export type DataType = {
   some_events: Event[];
   description: string;
   pictures: string[];
-  imageUrlEvents: string[];
+  
+  
 };
 
 export type Event = {
   title: string;
   date: string;
+  imageUrlEvents: string;
 };
 
 export const Home: FC = () => {
   const [data, setData] = useState<DataType>();
 
-  const [imageUrl, setImageUrl] = useState<DataType>();
+  const [imageUrl, setImageUrl] = useState<Event>();
 
   useEffect(() => {
     if (!data) {
@@ -33,7 +35,7 @@ export const Home: FC = () => {
     if (!imageUrl) {
       fetch("/data.json")
         .then((result) => result.json())
-        .then((resultImageUrl) => setImageUrl(resultImageUrl));
+        .then((resultUrl) => setImageUrl(resultUrl));
     }
   }, [imageUrl]);
 
@@ -60,7 +62,7 @@ export const Home: FC = () => {
       <Box sx={{ display: "inline-flex" }}>
         {data.some_events.map((event, index) => (
           <Box padding={"10px"} key={index}>
-            <SingleEvent event={event} imageLink={imageUrl}/>
+            <SingleEvent event={event}/>
           </Box>
         ))}
       </Box>

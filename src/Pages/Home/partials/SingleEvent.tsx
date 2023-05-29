@@ -5,23 +5,10 @@ import { red } from '@mui/material/colors';
 
 export interface SingleEventProps {
   event: Event;
-  imageUrlEvents: string[];
-  imageLink: string;
   
 }
 
-export const SingleEvent: FC<SingleEventProps> = ({ event, imageLink}) => {
-
-  const [imageUrl, setImageUrl] = useState<DataType>();
-
-
-  useEffect(() => {
-    if (!imageUrl) {
-      fetch("/data.json")
-        .then((result) => result.json())
-        .then((resultImageUrl) => setImageUrl(resultImageUrl));
-    }
-  }, [imageUrl]);
+export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
 
   return (
     <Box display="flex" gap={1}>
@@ -42,7 +29,7 @@ export const SingleEvent: FC<SingleEventProps> = ({ event, imageLink}) => {
         <CardMedia
           component="img"
           height="194"
-          image={imageLink}
+          image={event.imageUrlEvents}
           alt="Automotive Course"
         />
         <CardContent>
