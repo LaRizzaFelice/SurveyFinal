@@ -5,6 +5,7 @@ import HeaderNavBar from "../Pages/Items/HeaderNavBar";
 import { AboutMe } from "../Pages/AboutMe/AboutMe";
 import { SurveyPage } from "../Pages/SurveyPage/SurveyPage.";
 import ResultPage from "../Pages/SurveyPage/partials/ResultPage";
+import NewSurvey from "../Pages/SurveyPage/partials/NewSuvey";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
         path: "/resultpage",
         element: <ResultPage />,
       },
+      {
+        path: "/newSurvey",
+        element: <NewSurvey />,
+      },
+
     ],
   },
   {

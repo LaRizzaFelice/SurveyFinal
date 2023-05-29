@@ -20,6 +20,7 @@ const pages = [
   { label: "About me", icon: <PollIcon />, route: "/aboutme" },
   { label: "Surveys", icon: <PollIcon />, route: "/surveypage" },
   { label: "Survey Results", icon: <PollIcon />, route: "/resultpage" },
+  { label: "NEW Survey ", icon: <PollIcon />, route: "/newsurvey" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
