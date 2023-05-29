@@ -16,6 +16,7 @@ export type Event = {
   title: string;
   date: string;
   imageUrl: string;
+  description: string;
 };
 
 export const Home: FC = () => {

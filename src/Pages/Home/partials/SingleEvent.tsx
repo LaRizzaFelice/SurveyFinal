@@ -1,18 +1,16 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
-import { DataType, Event } from "../Home";
+import { Event } from "../Home";
 import { red } from '@mui/material/colors';
 
 export interface SingleEventProps {
   event: Event;
-  
 }
 
-export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
-
+export const SingleEvent: FC<SingleEventProps> = ({ event }) => {
   return (
     <Box display="flex" gap={1}>
-      <Card sx={{ maxWidth: 345 }} >
+      <Card sx={{ width: "100%" }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="event">
@@ -34,7 +32,7 @@ export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            Description of the automotive course.
+            {event.description}
           </Typography>
         </CardContent>
       </Card>
