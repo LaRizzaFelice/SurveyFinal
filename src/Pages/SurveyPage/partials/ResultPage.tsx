@@ -72,9 +72,10 @@ const ResultPage: FC =() => {
       </Typography>
       <Button
         variant="contained"
-        color="secondary"
+                  type="submit"
+                  sx={{ marginTop: "16px" }}
         onClick={() => handleDelete(index)}
-        sx={{ marginTop: "1rem" }}
+    
       >
         Delete Answer
       </Button>

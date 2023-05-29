@@ -1,14 +1,28 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
 import { DataType, Event } from "../Home";
 import { red } from '@mui/material/colors';
 
 export interface SingleEventProps {
   event: Event;
+  imageUrlEvents: string[];
+  imageLink: string;
   
 }
 
-export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
+export const SingleEvent: FC<SingleEventProps> = ({ event, imageLink}) => {
+
+  const [imageUrl, setImageUrl] = useState<DataType>();
+
+
+  useEffect(() => {
+    if (!imageUrl) {
+      fetch("/data.json")
+        .then((result) => result.json())
+        .then((resultImageUrl) => setImageUrl(resultImageUrl));
+    }
+  }, [imageUrl]);
+
   return (
     <Box display="flex" gap={1}>
       <Card sx={{ maxWidth: 345 }} >
@@ -28,7 +42,7 @@ export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
         <CardMedia
           component="img"
           height="194"
-          image={"/images/automotive-course-image.jpg"} // Replace with your automotive course image URL
+          image={imageLink}
           alt="Automotive Course"
         />
         <CardContent>

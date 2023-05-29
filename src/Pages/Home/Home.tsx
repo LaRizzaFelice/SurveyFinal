@@ -8,7 +8,7 @@ export type DataType = {
   some_events: Event[];
   description: string;
   pictures: string[];
-  picUrlEvents: string[];
+  imageUrlEvents: string[];
 };
 
 export type Event = {
@@ -19,6 +19,8 @@ export type Event = {
 export const Home: FC = () => {
   const [data, setData] = useState<DataType>();
 
+  const [imageUrl, setImageUrl] = useState<DataType>();
+
   useEffect(() => {
     if (!data) {
       fetch("/data.json")
@@ -26,6 +28,16 @@ export const Home: FC = () => {
         .then((resultData) => setData(resultData));
     }
   }, [data]);
+
+  useEffect(() => {
+    if (!imageUrl) {
+      fetch("/data.json")
+        .then((result) => result.json())
+        .then((resultImageUrl) => setImageUrl(resultImageUrl));
+    }
+  }, [imageUrl]);
+
+
 
   if (!data) {
     return (
@@ -48,7 +60,7 @@ export const Home: FC = () => {
       <Box sx={{ display: "inline-flex" }}>
         {data.some_events.map((event, index) => (
           <Box padding={"10px"} key={index}>
-            <SingleEvent event={event}/>
+            <SingleEvent event={event} imageLink={imageUrl}/>
           </Box>
         ))}
       </Box>
