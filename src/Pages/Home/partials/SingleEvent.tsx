@@ -29,7 +29,7 @@ export const SingleEvent: FC<SingleEventProps> = ({ event}) => {
         <CardMedia
           component="img"
           height="194"
-          image={event.imageUrlEvents}
+          image={event.imageUrl}
           alt="Automotive Course"
         />
         <CardContent>

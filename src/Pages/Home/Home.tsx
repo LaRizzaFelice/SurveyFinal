@@ -15,7 +15,7 @@ export type DataType = {
 export type Event = {
   title: string;
   date: string;
-  imageUrlEvents: string;
+  imageUrl: string;
 };
 
 export const Home: FC = () => {
