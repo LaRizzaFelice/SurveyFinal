@@ -1,4 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+
+
 import {
   Box,
   TextField,
@@ -13,6 +17,8 @@ import {
 } from "@mui/material";
 
 
+
+
 type DataType = {
   some_questions: string[];
 }
@@ -23,6 +29,8 @@ export const SurveyPage: FC =() => {
   const [question, setQuestion] = useState<DataType>();
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!question) {
@@ -64,13 +72,28 @@ export const SurveyPage: FC =() => {
   const storedSurveys = localStorage.getItem("surveys");
   const parsedSurveys = storedSurveys ? JSON.parse(storedSurveys) : [];
 
+  const handleRedirect = () => {
+    navigate("/");
+  };
+
+
   return (
     <Box padding={5}>
       <Container>
         {submitted ? (
-          <div>
+          <Box>
+          <Box>
             <h2>Thank you for submitting the survey!</h2>
-          </div>
+          </Box>
+          <Button
+                  variant="contained"
+                  type="submit"
+                  onClick={handleRedirect}
+                  sx={{ marginTop: "16px" }}
+                >
+                  Go back to Homepage
+                </Button>
+                </Box>
         ) : (
           <Container maxWidth="sm">
             <Paper elevation={3} sx={{ padding: "24px" }}>
@@ -81,7 +104,7 @@ export const SurveyPage: FC =() => {
               <form onSubmit={handleSubmit}>
               
                 <Typography variant="h6" gutterBottom>
-                  How satisfied are you with the overall quality of this course?
+                  {question?.some_questions[0]}
                 </Typography>
                 <TextField
                   name="q1"
@@ -93,7 +116,7 @@ export const SurveyPage: FC =() => {
                   required
                 />
                 <Typography variant="h6" gutterBottom>
-                  Would you recommend this training course to others in your organization or field?
+                  {question?.some_questions[1]}
                 </Typography>
                 <TextField
                   name="q2"
@@ -106,7 +129,7 @@ export const SurveyPage: FC =() => {
                 />
                 <FormControl component="fieldset" required>
   <Typography variant="h6" gutterBottom>
-    How satisfied are you with the content covered in the training course on a scale 1-10?
+    {question?.some_questions[2]}
   </Typography>
   <FormControlLabel
     control={
@@ -144,7 +167,7 @@ export const SurveyPage: FC =() => {
 </FormControl>
 
                 <Typography variant="h6" gutterBottom>
-                  How helpful were the training activities and discussions in reinforcing your understanding?
+                  {question?.some_questions[3]}
                 </Typography>
                 <TextField
                   name="q4"

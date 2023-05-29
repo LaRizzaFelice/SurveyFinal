@@ -17,12 +17,10 @@
     "https://plus.unsplash.com/premium_photo-1676651178916-a092c108d11e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
   ],
   "some_questions": [
-    {
-      "q1": "How satisfied are you with the overall quality of this course?",
-      "q2": "Would you recommend this training course to others in your organization or field?",
-      "q3": "How satisfied are you with the content covered in the training course on a scale 1-10?",
-      "q4": "How helpful were the training activities and discussions in reinforcing your understanding?"
-    }
+    "How satisfied are you with the overall quality of this course?",
+    "Would you recommend this training course to others in your organization or field?",
+    "How satisfied are you with the content covered in the training course on a scale 1-10?",
+    "How helpful were the training activities and discussions in reinforcing your understanding?"
   ],
   "picUrlEvents": [
     "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",

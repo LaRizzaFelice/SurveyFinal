@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
   Typography,
   Container,
@@ -6,7 +6,13 @@ import {
   Button,
 } from "@mui/material";
 
-const ResultPage = () => {
+type DataType = {
+  some_questions: string[];
+}
+
+const ResultPage: FC =() => {
+
+  const [question, setQuestion] = useState<DataType>();
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
@@ -15,6 +21,14 @@ const ResultPage = () => {
     const parsedSurveys = storedSurveys ? JSON.parse(storedSurveys) : [];
     setAnswers(parsedSurveys);
   }, []);
+
+  useEffect(() => {
+    if (!question) {
+      fetch("/data.json")
+        .then((result) => result.json())
+        .then((resultQuestion) => setQuestion(resultQuestion));
+    }
+  }, [question]);
 
   const handleDelete = (index) => {
    
@@ -45,16 +59,16 @@ const ResultPage = () => {
         <strong>Date:</strong> {survey.date}
       </Typography>
       <Typography variant="body1" gutterBottom>
-        <strong>Question 1:</strong> {survey.answers.q1}
+        <strong>{question?.some_questions[0]}:</strong> {survey.answers.q1}
       </Typography>
       <Typography variant="body1" gutterBottom>
-        <strong>Question 2:</strong> {survey.answers.q2}
+        <strong>{question?.some_questions[1]}:</strong> {survey.answers.q2}
       </Typography>
       <Typography variant="body1" gutterBottom>
-        <strong>Question 3:</strong> {survey.answers.q3}
+        <strong>{question?.some_questions[2]}:</strong> {survey.answers.q3}
       </Typography>
       <Typography variant="body1" gutterBottom>
-        <strong>Question 4:</strong> {survey.answers.q4}
+        <strong>{question?.some_questions[3]}:</strong> {survey.answers.q4}
       </Typography>
       <Button
         variant="contained"
