@@ -22,8 +22,6 @@ export type Event = {
 export const Home: FC = () => {
   const [data, setData] = useState<DataType>();
 
-  const [imageUrl, setImageUrl] = useState<Event>();
-
   useEffect(() => {
     if (!data) {
       fetch("/data.json")
@@ -31,14 +29,6 @@ export const Home: FC = () => {
         .then((resultData) => setData(resultData));
     }
   }, [data]);
-
-  useEffect(() => {
-    if (!imageUrl) {
-      fetch("/data.json")
-        .then((result) => result.json())
-        .then((resultUrl) => setImageUrl(resultUrl));
-    }
-  }, [imageUrl]);
 
 
 

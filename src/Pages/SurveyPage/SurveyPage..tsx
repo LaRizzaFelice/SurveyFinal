@@ -12,7 +12,6 @@ import {
   Typography,
   FormControl,
   FormControlLabel,
-  Checkbox,
   Radio,
 } from "@mui/material";
 
@@ -23,11 +22,18 @@ type DataType = {
   some_questions: string[];
 }
 
+export type Answers = {
+  q1?: string
+  q2?: string
+  q3?: string
+  q4?: string
+}
+
 
 export const SurveyPage: FC =() => {
 
   const [question, setQuestion] = useState<DataType>();
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState<Answers>({});
   const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
@@ -40,7 +46,7 @@ export const SurveyPage: FC =() => {
     }
   }, [question]);
 
-  const handleChange = (event) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
     const { name, value } = event.target;
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
@@ -48,7 +54,7 @@ export const SurveyPage: FC =() => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement>   = (event) => {
     event.preventDefault();
     
     const storedSurveys = localStorage.getItem("surveys");
@@ -69,8 +75,6 @@ export const SurveyPage: FC =() => {
     setSubmitted(true);
   };
 
-  const storedSurveys = localStorage.getItem("surveys");
-  const parsedSurveys = storedSurveys ? JSON.parse(storedSurveys) : [];
 
   const handleRedirect = () => {
     navigate("/");

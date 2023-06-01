@@ -5,15 +5,21 @@ import {
   Paper,
   Button,
 } from "@mui/material";
+import { Answers } from "../SurveyPage.";
 
 type DataType = {
   some_questions: string[];
 }
 
+type Survey = {
+  date: string;
+  answers: Answers;
+}
+
 const ResultPage: FC =() => {
 
   const [question, setQuestion] = useState<DataType>();
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState<Survey[]>([]);
 
   useEffect(() => {
     
@@ -30,7 +36,7 @@ const ResultPage: FC =() => {
     }
   }, [question]);
 
-  const handleDelete = (index) => {
+  const handleDelete = (index: number) => {
    
     const updatedAnswers = [...answers];
 
